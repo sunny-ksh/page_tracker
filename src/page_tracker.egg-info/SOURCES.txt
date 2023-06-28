@@ -1,3 +1,4 @@
+README.md
 pyproject.toml
 src/page_tracker/__init__.py
 src/page_tracker/app.py

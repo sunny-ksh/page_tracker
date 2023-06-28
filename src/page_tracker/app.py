@@ -1,3 +1,4 @@
+import os
 from functools import cache
 from flask import Flask
 from redis import Redis, RedisError
@@ -20,8 +21,9 @@ def index():
     else:
         return f"This page has been seen {page_views} times."
 
-	return f"This page has been seen {page_views} times."
+    return f"This page has been seen {page_views} times."
 
 @cache
 def redis():
-	return Redis()
+	#return Redis()
+	return Redis.from_url(os.getenv("REDIS_URL", "redis://localhost:6379"))
